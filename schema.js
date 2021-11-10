@@ -30,21 +30,6 @@ exports = {
     }
   },
   
-  PUT: {
-    id: { in: ['params'], errorMessage: REQUIRES('id') },
-    status: { in: ['query'],
-      optional: { 
-        options: { 
-          nullable: true 
-        } 
-      }
-    }
-  },
-  
-  DELETE: {
-    id: { in: ['params'], errorMessage: REQUIRES('id') },
-  },
-  
   // we have to distinguish between GET against the collection vs the individual
   GET: {
     list: {
@@ -59,5 +44,20 @@ exports = {
     single: {
       id: { in: ['params'], errorMessage: REQUIRES('id') }
     }
+  },
+  
+  PUT: {
+    id: { in: ['params'], errorMessage: REQUIRES('id') },
+    status: { in: ['query'],
+      optional: { 
+        options: { 
+          nullable: true 
+        } 
+      }
+    }
+  },
+  
+  DELETE: {
+    id: { in: ['params'], errorMessage: REQUIRES('id') },
   }
 };
