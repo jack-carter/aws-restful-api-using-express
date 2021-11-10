@@ -1,4 +1,7 @@
 // lambda.js
+//
+// this is the boiler-plate code every Lambda that's serving an Express API will use,
+// whether for one RESTful Resource, or many.
 
 const REST = require('serverless-http');
 const express = require('express')
