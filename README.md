@@ -1,8 +1,8 @@
 # restful-api-using-express
 This illustrates a set of conventions that are useful in:
 * defining complete RESTful APIs following the principles of [RESTful Resource Design](#restful-resource-design)
-* creating a wrapper Lambda to house the API written in Express
-* supporting validation schemas for all API operations
+* creating a wrapper Lambda to house the API written in `express`
+* supporting validation schemas for all API operations using `express-validator`
 
 ## RESTful Resource Design
 This is a design approach where:
@@ -66,3 +66,6 @@ Quite often APIs will NOT adhere to this distinction and will instead treat PUT 
 You MAY even implement BOTH, so that updates can use PATCH and replacements can use PUT.
 
 Only you can decide.
+
+## Validation
+This particular set of conventions opts to use the `npm` package `express-validator`, as it defines a handy mechanism for defining all validations in terms of schemas, which are merely JSON objects that indicate the various option which are provided and should applied to each input parameter.
