@@ -11,6 +11,6 @@ api.use(express.urlencoded({ extended: true }))
 api.use(express.json())
 
 // now add as many Entities as this Lambda will be handling
-api.use('/entity', require('./entities/entity'));
+api.use('/entity', require('./entity'));
 
 exports.handler = REST(api);
