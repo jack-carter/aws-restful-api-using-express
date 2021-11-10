@@ -1,11 +1,23 @@
-// schemas/entity.js
+// schema.js
+//
+// This file prescribes the validations to be applied to input parameters for each 
+// HTTP method implemented by the associated Resource.
+//
+// The validation schemas for each HTTP method are prescribed according to: 
+// https://express-validator.github.io/docs/schema-validation.html
+//
+// This file is kept separate, so that the actual runtime code kept in entity.js file
+// remains focused on implementation of the HTTP method. All validation schemas for 
+// the associated RESTful Resource are kept here, to aid in comprehensive understanding
+// of what's expected.
+//
+// This organization also allows for changes to be made to the validation schema, without
+// perturbing the runtime code that implements the HTTP method.
 
 function REQUIRES(property) {
   return ['MUST contain value for', property].join(' ');
 }
 
-// the validation schemas for each HTTP method according to 
-// https://express-validator.github.io/docs/schema-validation.html
 exports = {
   POST: {
     someProperty: { in: ['body'], errorMessage: REQUIRES('someProperty') },
