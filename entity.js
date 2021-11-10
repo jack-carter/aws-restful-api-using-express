@@ -1,4 +1,14 @@
 // entity.js
+//
+// each RESTful Resource would get its own module, which will define the following:
+//
+// • a URI that navigates to the collection of Resources of this type
+// • a URI that navigates to a single Resource of this type
+// • the HTTP methods defined on the collection of Resources
+// • the HTTP methods defined on the individual Resource
+// • applies any validations that are called out in schemas for each HTTP method
+// • an automatic response of "405 Method Not Allowed" for any HTTP method that's NOT defined
+// • exports all this as a singular Express.Router instance
 
 const { checkSchema } = require('express-validator');
 const { Router } = require('express');
